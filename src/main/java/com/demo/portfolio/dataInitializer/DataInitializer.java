@@ -70,7 +70,7 @@ public class DataInitializer implements CommandLineRunner {
         p3.setDemoLink("https://github.com/ArkarPhonePyae/SAAS-POS-system-");
         projectRepository.save(p3);
 
-        // 3. Blogs Data များ ထည့်သွင်းခြင်း (သင့်ရဲ့ Entity ဖွဲ့စည်းပုံအတိုင်း)
+     // Blogs Data များ ထည့်သွင်းခြင်း
         Blog blog1 = new Blog();
         blog1.setTitle("Getting Started with Spring Boot on Production");
         blog1.setCategory("Backend");
@@ -88,6 +88,25 @@ public class DataInitializer implements CommandLineRunner {
         blog2.setContent("Full detailed content about Angular best practices and components...");
         blog2.setReadTimeMinutes(4);
         blogRepository.save(blog2);
+
+        // ပေးထားသော Data အသစ်များ (Clean Architecture & Multi-Tenant)
+        Blog blog3 = new Blog();
+        blog3.setTitle("Clean Architecture Principles in Modern Enterprise Apps");
+        blog3.setCategory("Architecture");
+        blog3.setPublicationDate(LocalDate.parse("2026-05-28"));
+        blog3.setDescription("How to decouple core business logic from frameworks to ensure long-term maintainability and testability.");
+        blog3.setContent("Full detailed content about Clean Architecture principles...");
+        blog3.setReadTimeMinutes(8);
+        blogRepository.save(blog3);
+
+        Blog blog4 = new Blog();
+        blog4.setTitle("Mastering Multi-Tenant Architecture with Spring Boot & MySQL");
+        blog4.setCategory("Spring Boot");
+        blog4.setPublicationDate(LocalDate.parse("2026-06-15"));
+        blog4.setDescription("A deep dive into implementing isolated datasource routing and interceptors for high-performance SaaS applications.");
+        blog4.setContent("Full detailed content about Multi-Tenant architecture...");
+        blog4.setReadTimeMinutes(6);
+        blogRepository.save(blog4);
     }
 
     private void addSkill(String name, String category, int percentage, Profile profile) {
